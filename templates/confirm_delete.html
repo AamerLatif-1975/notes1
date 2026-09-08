@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--  <meta charset="UTF-8">
+    <title>Confirm Delete</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}"> -->
+</head>
+<body>
+    <h1>Delete {{ staff.name }}?</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Yes, delete">
+    </form>
+    <a href="{% url 'staff_list' %}">Cancel</a>
+</body>
+</html>

@@ -51,7 +51,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'notes1.urls'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/accounts/staff/'
 LOGIN_URL = '/login/'
 TEMPLATES = [
     {

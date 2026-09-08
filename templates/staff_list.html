@@ -1,0 +1,70 @@
+<!-- <!DOCTYPE html>
+<html>
+<head><title>Staff List</title></head>
+<body>
+    <h1>Staff List</h1>
+    <a href="{% url 'add_staff' %}">Add Staff Member</a>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>S#</th><th>Name</th><th>Designation</th><th>Pay Scale</th><th>Date of Joining</th><th>Basic Pay</th>
+        </tr>
+        {% for s in staff %}
+        <tr>
+            <td>{{ s.serial_number }}</td>
+            <td>{{ s.name }}</td>
+            <td>{{ s.designation }}</td>
+            <td>{{ s.pay_scale }}</td>
+            <td>{{ s.date_of_joining }}</td>
+            <td>{{ s.basic_pay }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Staff List</title>
+</head>
+
+<body>
+
+<h2>Staff List</h2>
+
+<table border="1">
+    <tr>
+        <th>S#</th>
+        <th>Name</th>
+        <th>Designation</th>
+        <th>PRACS Pay Scale</th>
+        <th>Date of Joining</th>
+        <th>Basic Pay</th>
+        <th>Action</th>
+    </tr>
+
+    {% for member in staff %}
+    <tr>
+        <td>{{ member.id }}</td>
+        <td>{{ member.name }}</td>
+        <td>{{ member.designation }}</td>
+        <td>{{ member.pay_scale }}</td>
+        <td>{{ member.date_of_joining }}</td>
+        <td>{{ member.basic_pay }}</td>
+
+        <td>
+            <a href="{% url 'edit_staff' member.id %}">Edit</a>
+        </td>
+       <td> <a href="{% url 'delete_staff' member.pk %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br>
+
+<a href="{% url 'add_staff' %}">Add Staff</a>
+<a href="{% url 'logout' %}">Logout</a>
+
+</body>
+</html>
